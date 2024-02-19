@@ -8,8 +8,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Titillium Webs, sans-serif"],
-        oval: ["Colfax, sans-serif"],
+        sans: ["titillium webs, sans-serif"],
+        oval: ["colfax-web, sans-serif"],
+      },
+      colors: {
+        primary: "#806BFF",
+        light: "#FFFFFF",
+        dark: "#000000",
+        gray: "#F2F2F2",
       },
     },
   },

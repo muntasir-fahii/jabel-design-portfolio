@@ -5,6 +5,22 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Colfax";
+  font-family: "colfax-web, sans-serif";
   src: url("../libs/fonts/Colfax-Medium.otf");
+}
+
+main {
+  @apply mt-8;
+}
+
+.sp {
+  @apply py-8;
+}
+
+.wrapper {
+  @apply container mx-auto px-5 lg:px-0;
+}
+
+.eq {
+  transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
