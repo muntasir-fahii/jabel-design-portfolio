@@ -2,15 +2,23 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <main className="wrapper flex justify-between items-center mx-auto ">
+    <header className="wrapper w-full sp flex justify-between items-center mx-auto ">
       <div className="flex justify-between items-center gap-10">
         <Link className="font-oval font-semibold" href={"./"}>
           jabel.design
         </Link>
         <ul className="flex font-sans justify-between gap-10 bg-gray py-[0.875rem] px-6 items-center rounded-[6.25rem]">
-          <li>dribble</li>
-          <li>behance</li>
-          <li>linkedin</li>
+          <li className="nav-link">
+            <Link href={"https://dribbble.com/jabelahmed"}>dribble</Link>
+          </li>
+          <li className="nav-link">
+            <Link href={"https://www.behance.net/jabelahmed"}>behance</Link>
+          </li>
+          <li className="nav-link">
+            <Link href={"https://www.linkedin.com/in/jabel-ahmed-1810b3152"}>
+              linkedin
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="flex justify-between items-center gap-10">
@@ -27,7 +35,7 @@ const Navbar = () => {
           mail me
         </Link>
       </div>
-    </main>
+    </header>
   );
 };
 

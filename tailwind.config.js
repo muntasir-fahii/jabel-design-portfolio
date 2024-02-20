@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["titillium webs, sans-serif"],
+        sans: ["Titillium Web, sans-serif"],
         oval: ["colfax-web, sans-serif"],
       },
       colors: {

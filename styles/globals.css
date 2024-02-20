@@ -9,6 +9,12 @@
   src: url("../libs/fonts/Colfax-Medium.otf");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 main {
   @apply mt-8;
 }
@@ -23,4 +29,31 @@ main {
 
 .eq {
   transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* NAVBAR */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateX(0);
+  transition: 0.3s;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hero-img {
+  border: 1.5rem solid white;
+  width: 17rem;
+  height: 17rem;
+  object-fit: cover;
 }
