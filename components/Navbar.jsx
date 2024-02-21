@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <header className="wrapper w-full sp flex justify-between items-center mx-auto ">
+    <header className="wrapper h-24 flex justify-between items-center">
       <div className="flex justify-between items-center gap-10">
         <Link className="font-oval font-semibold" href={"./"}>
           jabel.design

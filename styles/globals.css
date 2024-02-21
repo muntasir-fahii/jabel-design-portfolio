@@ -9,12 +9,6 @@
   src: url("../libs/fonts/Colfax-Medium.otf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 main {
   @apply mt-8;
 }
@@ -53,7 +47,13 @@ main {
 
 .hero-img {
   border: 1.5rem solid white;
-  width: 17rem;
-  height: 17rem;
   object-fit: cover;
+}
+
+.circle {
+  height: 16rem;
+  width: 16em;
+  background: linear-gradient(to bottom, #806bff 40%, #806bff 50%);
+  filter: blur(120px);
+  opacity: 50%;
 }

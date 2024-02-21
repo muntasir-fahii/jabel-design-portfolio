@@ -8,12 +8,9 @@ import Hero from "@/components/Hero";
 const Home = () => {
   return (
     <div>
-      {/* <h1 className="text-8xl font-sans">hello</h1>
-
-      <h1 className="text-8xl font-oval">hello</h1> */}
       <Navbar />
       <Hero />
-      {/*   <Skills />
+      {/* <Skills />
       <Projects />
       <Explore />
       <Footer /> */}
