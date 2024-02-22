@@ -45,6 +45,8 @@ main {
   width: 100%;
 }
 
+/* HERO */
+
 .hero-img {
   border: 1.5rem solid white;
   object-fit: cover;
@@ -54,6 +56,16 @@ main {
   height: 16rem;
   width: 16em;
   background: linear-gradient(to bottom, #806bff 40%, #806bff 50%);
-  filter: blur(120px);
-  opacity: 50%;
+  filter: blur(100px);
+  opacity: 60%;
+}
+.circle-2 {
+  background: linear-gradient(to bottom, #806bff 40%, #806bff 50%);
+  filter: blur(100px);
+  opacity: 60%;
+  z-index: 1;
+}
+
+.skill {
+  z-index: 2;
 }

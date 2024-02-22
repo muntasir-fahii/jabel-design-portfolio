@@ -5,7 +5,7 @@ import HeroImage from "../public/hero.jpg";
 
 const Hero = () => {
   return (
-    <main className="wrapper  p-10 md:p-0 w-full h-full lg:h-[calc(80vh-6rem)] grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-20 relative">
+    <main className="wrapper  p-10 md:p-0 mb-10 w-full h-full lg:h-[calc(90vh-6rem)] grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-20 relative">
       <div className="flex flex-col justify-center items-center lg:items-start col-span-1 py-5 gap-10 ">
         <div className="grid gap-2 justify-center items-center  md:text-start w-full md:w-[44rem] ">
           <h4 className="font-oval font-semibold text-xl md:text-[22px] ">
