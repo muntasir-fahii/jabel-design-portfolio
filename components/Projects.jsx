@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -33,23 +34,51 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="h-full w-full sp relative">
-      <div className="wrapper">
-        <div className="skill">
+    <section className="h-full w-full my-20 sp relative">
+      <div className="wrapper grid gap-10">
+        <div className="">
           <h2 className=" font-sans text-3xl font-bold">
             Have a look at my work
           </h2>
         </div>
         {projects.map((project) => (
-          <div key={project.title}>
-            <div>
+          <div
+            className="bg-gray bg-opacity-80 grid grid-cols-1 lg:grid-cols-2 p-5 lg:p-8 rounded-3xl"
+            key={project.title}
+          >
+            <div className="col-span-1 w-full h-64 sm:h-72 md:h-[22.5rem] rounded-3xl  overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 width={500}
                 height={500}
                 priority
+                className="w-full h-full object-cover"
               />
+            </div>
+            <div className="col-span-1 w-full flex flex-col items-center md:items-start justify-center  gap-10 rounded-3xl  overflow-hidden bg-light p-8">
+              <div className="grid justify-center items-center text-center md:text-start gap-5">
+                <h2 className="font-sans font-bold text-xl md:text-[22px] ">
+                  {project.title}
+                </h2>
+                <p className="lg:w-[70%] h-44 sm:h-28 md:h-[4.5rem] lg:h-24 text-alt font-normal">
+                  {project.description}
+                </p>
+              </div>
+              <div className="flex text-center items-center flex-col md:flex-row md:gap-5  lg:gap-10">
+                <Link
+                  className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0"
+                  href={"./"}
+                >
+                  live website
+                </Link>
+                <Link
+                  className="font-oval font-semibold bg-gray py-[0.875rem] px-8 rounded-[6.25rem]"
+                  href={"./"}
+                >
+                  case study
+                </Link>
+              </div>
             </div>
           </div>
         ))}

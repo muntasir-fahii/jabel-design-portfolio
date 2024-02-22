@@ -39,7 +39,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="h-full sp md:h-[100vh] lg:h-[60vh] w-full relative">
+    <section className="sp h-full lg:h-[100vh] xl:[70vh] w-full relative">
       <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-8 ">
         <div className="skill text-center">
           <h2 className=" font-sans text-3xl font-bold">{`I'm an expert in these`}</h2>
