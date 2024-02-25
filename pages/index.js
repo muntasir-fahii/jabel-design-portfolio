@@ -2,7 +2,7 @@
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-// import Explore from "@/components/Explore";
+import Explore from "@/components/Explore";
 // import Contact from "@/components/Contact";
 // import Footer from "@/components/Footer";
 
@@ -13,8 +13,8 @@ const Home = () => {
       <Hero />
       <Skills />
       <Projects />
-      {/*  <Explore />
-    <Contact/>
+      <Explore />
+      {/*  <Contact/>
     <Footer /> */}
     </div>
   );

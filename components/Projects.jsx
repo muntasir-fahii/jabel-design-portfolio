@@ -34,8 +34,11 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="h-full w-full my-20  sp relative">
+    <section className="h-full w-full my-20 sp relative">
       <div className="wrapper grid gap-10 ">
+        <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-80 left-[44rem] rounded-full"></div>
+        <div className="circle-3 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[50rem] left-[44rem] rounded-full"></div>
+        <div className="circle-4 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[80rem] left-[44rem] rounded-full"></div>
         <div className="">
           <h2 className=" font-sans text-3xl font-bold">
             Have a look at my work
@@ -83,9 +86,6 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto -mt-[150rem] md:-mt-[145rem] lg:-mt-[100rem] rounded-full"></div>
-      <div className="circle-3 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto mt-[30rem] md:mt-80 lg:-mt-24 rounded-full"></div>
-      <div className="circle-4 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto mt-[30rem] md:mt-80 lg:mt-0 rounded-full"></div>
     </section>
   );
 };
