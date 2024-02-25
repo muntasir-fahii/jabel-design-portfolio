@@ -65,7 +65,24 @@ main {
   opacity: 60%;
   z-index: 1;
 }
+.circle-3 {
+  background: linear-gradient(to bottom, #806bff 40%, #806bff 50%);
+  filter: blur(100px);
+  opacity: 60%;
+  z-index: 1;
+}
+.circle-4 {
+  background: linear-gradient(to bottom, #806bff 40%, #806bff 50%);
+
+  filter: blur(100px);
+  opacity: 60%;
+  z-index: 1;
+}
 
 .skill {
+  z-index: 2;
+}
+
+.projects {
   z-index: 2;
 }

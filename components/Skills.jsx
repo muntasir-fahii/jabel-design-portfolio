@@ -54,7 +54,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10  invisible sm:visible sm:left-48 md:left-48 lg:left-80 xl:left-[26rem] 2xl:left-[45.5rem]  rounded-full"></div>
+      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-14 sm:left-52 md:left-64 lg:left-80 xl:left-[26rem] 2xl:left-[45.5rem]  rounded-full"></div>
     </section>
   );
 };
