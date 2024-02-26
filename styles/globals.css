@@ -93,6 +93,10 @@ main {
 
 /* EXPLORATION */
 
+.exploration {
+  z-index: 2;
+}
+
 .top {
   display: flex;
   justify-content: center;
@@ -104,4 +108,10 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 1.2rem;
+}
+
+/* CONTACT */
+
+.social-link {
+  z-index: 2;
 }

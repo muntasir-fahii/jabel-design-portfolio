@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const top = [
   {
@@ -45,8 +46,8 @@ const bottom = [
 const Explore = () => {
   return (
     <main>
-      <section className="sp">
-        <div className="grid justify-center items-center mx-auto gap-10">
+      <section className="sp my-20 relative">
+        <div className=" grid justify-center items-center mx-auto gap-10">
           <div className="text-center">
             <h2 className="font-sans text-3xl font-bold">
               My visual exploration
@@ -69,7 +70,7 @@ const Explore = () => {
               </div>
             ))}
           </div>
-          <div className="bottom">
+          <div className="exploration bottom ">
             {bottom.map((image) => (
               <div
                 className="w-96 h-80 rounded-2xl overflow-hidden "
@@ -86,7 +87,17 @@ const Explore = () => {
               </div>
             ))}
           </div>
+
+          <div className="exploration mx-auto">
+            <Link
+              className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0"
+              href={"./"}
+            >
+              view more
+            </Link>
+          </div>
         </div>
+        <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[40rem] left-[44rem] rounded-full"></div>
       </section>
     </main>
   );
