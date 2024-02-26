@@ -44,17 +44,17 @@ const Skills = () => {
         <div className="skill text-center">
           <h2 className=" font-sans text-3xl font-bold">{`I'm an expert in these`}</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-20 justify-between ">
+        <div className="skill grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-20 justify-between ">
           {skills.map((skill) => (
-            <div key={skill.name} className="skill">
-              <p className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold">
+            <div key={skill.name}>
+              <p className="bg-light py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold">
                 {skill.name}
               </p>
             </div>
           ))}
         </div>
       </div>
-      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-14 sm:left-52 md:left-64 lg:left-80 xl:left-[26rem] 2xl:left-[45.5rem]  rounded-full"></div>
+      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem]  rounded-full"></div>
     </section>
   );
 };
