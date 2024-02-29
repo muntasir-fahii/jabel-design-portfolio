@@ -10,6 +10,9 @@ const Navbar = () => {
         // animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, x: "100%" }}
         // transition={{ ease: "easeOut", duration: 2 }}
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
         className="hidden md:block"
       >
         <nav className="wrapper h-24 flex justify-between items-center ">
@@ -34,20 +37,34 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex justify-between items-center gap-10">
-            <motion.div
-              whileTap={{ scale: 0.9 }}
-              whileHover={{ scale: 1.05 }}
-              className=" font-oval bg-gray py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="900"
+              data-aos-delay="300"
             >
-              <Link href={"./"}>cv</Link>
-            </motion.div>
-            <motion.div
-              whileTap={{ scale: 0.9 }}
-              whileHover={{ scale: 1.05 }}
-              className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-12  rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
+              <motion.div
+                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                className=" font-oval bg-gray py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
+              >
+                <Link href={"./"}>cv</Link>
+              </motion.div>
+            </div>
+            <div
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="800"
+              data-aos-delay="500"
             >
-              <Link href={"./"}>mail me</Link>
-            </motion.div>
+              <motion.div
+                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05 }}
+                className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-12  rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
+              >
+                <Link href={"./"}>mail me</Link>
+              </motion.div>
+            </div>
           </div>
         </nav>
       </header>
