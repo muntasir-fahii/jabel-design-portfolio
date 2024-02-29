@@ -17,25 +17,25 @@ const Contact = () => {
         <div className="social-link grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <Link
             href={"https://dribbble.com/jabelahmed"}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold"
+            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
             dribbble
           </Link>
           <Link
             href={"https://www.behance.net/jabelahmed"}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold"
+            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
             behance
           </Link>
           <Link
             href={"https://www.linkedin.com/in/jabel-ahmed-1810b3152"}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold"
+            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
             linkedin
           </Link>
           <Link
             href={"https://www.instagram.com/jabelahmed5050"}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold"
+            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold  hover:bg-primary hover:text-light eq"
           >
             instagram
           </Link>

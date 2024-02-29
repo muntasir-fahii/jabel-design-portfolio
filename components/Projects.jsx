@@ -70,13 +70,13 @@ const Projects = () => {
               </div>
               <div className="flex text-center items-center flex-col md:flex-row md:gap-5  lg:gap-10">
                 <Link
-                  className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0"
+                  className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-gray hover:text-dark eq"
                   href={"./"}
                 >
                   live website
                 </Link>
                 <Link
-                  className="font-oval font-semibold bg-gray py-[0.875rem] px-8 rounded-[6.25rem]"
+                  className="font-oval font-semibold bg-gray py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
                   href={"./"}
                 >
                   case study

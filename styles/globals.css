@@ -9,6 +9,10 @@
   src: url("../libs/fonts/Colfax-Medium.otf");
 }
 
+body {
+  overflow-x: hidden;
+}
+
 main {
   @apply mt-8;
 }
