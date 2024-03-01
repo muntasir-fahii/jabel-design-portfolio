@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import HeroImage from "../public/hero.jpg";
 import { useRef } from "react";
-import { useInView, motion, delay } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+// import { animateSplitText } from "./gsap-anime";
+// import { useEffect } from "react";
 
 const slideUp = {
   initial: {
@@ -19,33 +23,14 @@ const slideUp = {
     transition: { duration: 0.5 },
   },
 };
-// const imgSlideUp = {
-//   initial: {
-//     opacity: "0",
-//     scale: "0.5",
-//   },
-
-//   open: {
-//     scale: "1",
-//     opacity: "1",
-//     transition: {
-//       duration: 0.8,
-//       delay: 0.5,
-//       ease: [0, 0.71, 0.2, 1.01],
-//     },
-//   },
-
-//   closed: {
-//     opacity: "0",
-//     scale: "0.5",
-//     transition: { duration: 0.5 },
-//   },
-// };
 
 const Hero = () => {
+  // useEffect(() => {
+  //   animateSplitText(".split");
+  // }, []);
+
   const description = useRef(null);
   const isInView = useInView(description);
-
   return (
     <main className="wrapper p-10 md:p-0 mb-10 w-full h-full lg:h-[calc(90vh-6rem)] grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-20 relative">
       <div className="flex flex-col justify-center items-center lg:items-start col-span-1 py-5 gap-10 ">
@@ -55,7 +40,7 @@ const Hero = () => {
           animate={isInView ? "open" : "closed"}
           className="grid gap-2 justify-center items-center  md:text-start w-full md:w-[44rem] py-1 overflow-hidden"
         >
-          <h4 className="font-oval font-semibold text-xl md:text-[22px] ">
+          <h4 className="split font-oval font-semibold text-xl md:text-[22px] ">
             {`Hey 👋 nice to meet you. I'm Jabel Ahmed, Creative designer and`}
           </h4>
           <h1 className="font-sans font-bold text-3xl md:text-4xl md:w-[34rem]">

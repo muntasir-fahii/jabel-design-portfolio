@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const skills = [
   {
@@ -45,8 +46,8 @@ const container = {
     opacity: 1,
     scale: 1,
     transition: {
-      delayChildren: 0.5,
-      staggerChildren: 0.3,
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -60,6 +61,8 @@ const item = {
 };
 
 const Skills = () => {
+  const items = useRef(null);
+  const isInView = useInView(items);
   return (
     <section className="sp h-full lg:h-[100vh] xl:[70vh] w-full relative">
       <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-8 ">
@@ -73,8 +76,8 @@ const Skills = () => {
         </div>
         <motion.div
           variants={container}
-          initial="hidden"
-          animate="visible"
+          ref={items}
+          animate={isInView ? "visible" : "hidden"}
           className="skill grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-20 justify-between "
         >
           {skills.map((skill) => (
