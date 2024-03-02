@@ -1,5 +1,8 @@
+import { motion, animate, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import useMeasure from "react-use-measure";
 
 const top = [
   {
@@ -44,6 +47,101 @@ const bottom = [
 ];
 
 const Explore = () => {
+  const FAST_DURATION = 25;
+  const SLOW_DURATION = 75;
+
+  const [durationTop, setDurationTop] = useState(FAST_DURATION);
+  const [mustFinishTop, setMustFinishTop] = useState(false);
+  const [reRenderTop, setReRenderTop] = useState(false);
+
+  const [durationBottom, setDurationBottom] = useState(FAST_DURATION);
+  const [mustFinishBottom, setMustFinishBottom] = useState(false);
+  const [reRenderBottom, setReRenderBottom] = useState(false);
+
+  let [ref, { width }] = useMeasure();
+
+  const xTranslationTop = useMotionValue(0);
+  const xTranslationBottom = useMotionValue(0);
+
+  useEffect(() => {
+    // Top Images
+    let controlsTop;
+    let finalPositionTop = -width / 2 - 8;
+
+    if (mustFinishTop) {
+      controlsTop = animate(
+        xTranslationTop,
+        [xTranslationTop.get(), finalPositionTop],
+        {
+          ease: "linear",
+          duration:
+            durationTop * (1 - xTranslationTop.get() / finalPositionTop),
+          onComplete: () => {
+            setMustFinishTop(false);
+            setReRenderTop(!reRenderTop);
+          },
+        }
+      );
+    } else {
+      controlsTop = animate(xTranslationTop, [0, finalPositionTop], {
+        ease: "linear",
+        duration: durationTop,
+        repeat: Infinity,
+        repeatType: "loop",
+        repeatDelay: 0,
+      });
+    }
+
+    // Bottom Images
+    let controlsBottom;
+    let finalPositionBottom = width / 2 + 8;
+
+    if (mustFinishBottom) {
+      controlsBottom = animate(
+        xTranslationBottom,
+        [xTranslationBottom.get(), finalPositionBottom],
+        {
+          ease: "linear",
+          duration:
+            durationBottom *
+            (1 - Math.abs(xTranslationBottom.get()) / finalPositionBottom),
+          onComplete: () => {
+            setMustFinishBottom(false);
+            setReRenderBottom(!reRenderBottom);
+          },
+        }
+      );
+    } else {
+      controlsBottom = animate(
+        xTranslationBottom,
+        [-finalPositionBottom, finalPositionBottom],
+        {
+          ease: "linear",
+          duration: durationBottom,
+          repeat: Infinity,
+          repeatType: "loop",
+          repeatDelay: 0,
+        }
+      );
+    }
+
+    // Cleanup functions for both sets of images
+    return () => {
+      controlsTop?.stop();
+      controlsBottom?.stop();
+    };
+  }, [
+    xTranslationTop,
+    xTranslationBottom,
+    width,
+    durationTop,
+    durationBottom,
+    mustFinishTop,
+    mustFinishBottom,
+    reRenderTop,
+    reRenderBottom,
+  ]);
+
   return (
     <main>
       <section
@@ -56,11 +154,21 @@ const Explore = () => {
               My visual exploration
             </h2>
           </div>
-          <div className="flex justify-center gap-3 xl:gap-5 items-center mx-auto">
-            {top.map((image) => (
+          <motion.div
+            className="flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+            ref={ref}
+            style={{ x: xTranslationTop }}
+            onHoverStart={() => {
+              setMustFinishTop(true), setDurationTop(SLOW_DURATION);
+            }}
+            onHoverEnd={() => {
+              setMustFinishTop(true), setDurationTop(FAST_DURATION);
+            }}
+          >
+            {[...top, ...top].map((image, index) => (
               <div
                 className="xl:w-80 2xl:w-[28rem] xl:h-60 2xl:h-[22rem] rounded-xl sm:rounded-2xl   overflow-hidden"
-                key={image.id}
+                key={index}
               >
                 <Image
                   src={image.img}
@@ -72,12 +180,22 @@ const Explore = () => {
                 />
               </div>
             ))}
-          </div>
-          <div className="exploration flex justify-center gap-3 xl:gap-5 items-center mx-auto">
-            {bottom.map((image) => (
+          </motion.div>
+          <motion.div
+            className="exploration flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+            ref={ref}
+            style={{ x: xTranslationBottom }}
+            onHoverStart={() => {
+              setMustFinishBottom(true), setDurationBottom(SLOW_DURATION);
+            }}
+            onHoverEnd={() => {
+              setMustFinishBottom(true), setDurationBottom(FAST_DURATION);
+            }}
+          >
+            {[...bottom, ...bottom].map((image, index) => (
               <div
                 className="xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
-                key={image.id}
+                key={index}
               >
                 <Image
                   src={image.img}
@@ -89,7 +207,7 @@ const Explore = () => {
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="exploration mx-auto my-5 md:my-0">
             <Link

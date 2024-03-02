@@ -37,15 +37,27 @@ const Projects = () => {
     <section className="h-full w-full my-20 sp relative">
       <div className="wrapper grid gap-10 ">
         <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[48rem] sm:top-[42rem] md:top-[38rem] lg:top-80 left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
+
         <div className="circle-3 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[98rem] sm:top-[88rem] md:top-[80rem] lg:top-[50rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
+
         <div className="circle-4 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[148rem] sm:top-[138rem] md:top-[126rem] lg:top-[80rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
-        <div className="">
-          <h2 className="font-sans text-3xl font-bold">
+
+        <div
+          data-aos="fade-right"
+          // data-aos-easing="linear"
+          data-aos-duration="800"
+          className=" "
+        >
+          <h2 className="font-sans text-3xl font-bold  overflow-hidden">
             Have a look at my work
           </h2>
         </div>
         {projects.map((project) => (
           <div
+            data-aos="zoom-in-up"
+            // data-aos-easing="linear"
+            data-aos-duration="900"
+            data-aos-delay="250"
             className="projects bg-gray bg-opacity-80 grid grid-cols-1 lg:grid-cols-2 p-5 lg:p-8 rounded-3xl"
             key={project.title}
           >
