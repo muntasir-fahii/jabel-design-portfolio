@@ -146,97 +146,95 @@ const Explore = () => {
   const isInView = useInView(description);
 
   return (
-    <main>
-      <section
-        className="sp my-20 h-full w-full
-       relative"
+    <section
+      className="sp my-20 h-full w-full
+       relative overflow-hidden"
+    >
+      <motion.div
+        ref={description}
+        animate={isInView ? "open" : "closed"}
+        className="border-dark w-full  grid justify-center items-center mx-auto gap-5 md:gap-10"
       >
-        <motion.div
-          ref={description}
-          animate={isInView ? "open" : "closed"}
-          className="border-dark w-full  grid justify-center items-center mx-auto gap-5 md:gap-10"
+        <div
+          data-aos="zoom-in-down"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          className="text-center"
         >
-          <div
-            data-aos="zoom-in-down"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            className="text-center"
-          >
-            <h2 className="font-sans text-3xl font-bold">
-              My visual exploration
-            </h2>
-          </div>
-          <motion.div
-            className="flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
-            ref={ref}
-            style={{ x: xTranslationTop }}
-            onHoverStart={() => {
-              setMustFinishTop(true), setDurationTop(SLOW_DURATION);
-            }}
-            onHoverEnd={() => {
-              setMustFinishTop(true), setDurationTop(FAST_DURATION);
-            }}
-          >
-            {[...top, ...top].map((image, index) => (
-              <div
-                className="xl:w-80 2xl:w-[28rem] xl:h-60 2xl:h-[22rem] rounded-xl sm:rounded-2xl   overflow-hidden"
-                key={index}
-              >
-                <Image
-                  src={image.img}
-                  alt={image.id}
-                  width={500}
-                  height={500}
-                  priority
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
-          </motion.div>
-          <motion.div
-            className="exploration flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
-            ref={ref}
-            style={{ x: xTranslationBottom }}
-            onHoverStart={() => {
-              setMustFinishBottom(true), setDurationBottom(SLOW_DURATION);
-            }}
-            onHoverEnd={() => {
-              setMustFinishBottom(true), setDurationBottom(FAST_DURATION);
-            }}
-          >
-            {[...bottom, ...bottom].map((image, index) => (
-              <div
-                className="xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
-                key={index}
-              >
-                <Image
-                  src={image.img}
-                  alt={image.id}
-                  width={500}
-                  height={500}
-                  priority
-                  className="h-full w-full object-cover "
-                />
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            whileTap={{ scale: 0.9 }}
-            whileHover={{ scale: 1.05 }}
-            className="exploration mx-auto my-5 md:my-0"
-          >
-            <Link
-              className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
-              href={"./"}
+          <h2 className="font-sans text-3xl font-bold">
+            My visual exploration
+          </h2>
+        </div>
+        <motion.div
+          className="flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+          ref={ref}
+          style={{ x: xTranslationTop }}
+          onHoverStart={() => {
+            setMustFinishTop(true), setDurationTop(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinishTop(true), setDurationTop(FAST_DURATION);
+          }}
+        >
+          {[...top, ...top].map((image, index) => (
+            <div
+              className="w-40 xl:w-80 2xl:w-[28rem] xl:h-60 2xl:h-[22rem] rounded-xl sm:rounded-2xl   overflow-hidden"
+              key={index}
             >
-              view more
-            </Link>
-          </motion.div>
+              <Image
+                src={image.img}
+                alt={image.id}
+                width={500}
+                height={500}
+                priority
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </motion.div>
-        <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[40rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
-      </section>
-    </main>
+        <motion.div
+          className="exploration flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+          ref={ref}
+          style={{ x: xTranslationBottom }}
+          onHoverStart={() => {
+            setMustFinishBottom(true), setDurationBottom(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinishBottom(true), setDurationBottom(FAST_DURATION);
+          }}
+        >
+          {[...bottom, ...bottom].map((image, index) => (
+            <div
+              className="w-32 xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
+              key={index}
+            >
+              <Image
+                src={image.img}
+                alt={image.id}
+                width={500}
+                height={500}
+                priority
+                className="h-full w-full object-cover "
+              />
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          className="exploration mx-auto my-5 md:my-0"
+        >
+          <Link
+            className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
+            href={"./"}
+          >
+            view more
+          </Link>
+        </motion.div>
+      </motion.div>
+      <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[40rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
+    </section>
   );
 };
 

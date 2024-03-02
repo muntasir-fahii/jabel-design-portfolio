@@ -25,7 +25,7 @@ const Footer = () => {
       ref={description}
       variants={slideUp}
       animate={isInView ? "open" : "closed"}
-      className="font-sans mb-10 text-center text-alt"
+      className="font-sans text-center text-alt"
     >
       <p>@2024 Portfolio by Jabel Ahmed</p>
     </motion.div>

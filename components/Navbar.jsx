@@ -15,7 +15,7 @@ const Navbar = () => {
         data-aos-duration="1000"
         className="hidden md:block"
       >
-        <nav className="wrapper h-24 flex justify-between items-center ">
+        <nav className="wrapper h-24 flex justify-between items-center mx-auto">
           <div className="flex justify-between items-center gap-10">
             <Link className="font-oval font-semibold" href={"./"}>
               jabel.design

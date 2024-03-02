@@ -64,7 +64,7 @@ const Skills = () => {
   const items = useRef(null);
   const isInView = useInView(items);
   return (
-    <section className="sp h-full lg:h-[100vh] xl:[70vh] w-full relative">
+    <section className="sp wrapper h-full lg:h-[100vh] xl:[70vh] w-full relative">
       <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-8 ">
         <div
           data-aos="zoom-out"
