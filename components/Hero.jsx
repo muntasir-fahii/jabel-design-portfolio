@@ -10,25 +10,43 @@ import { motion, useInView } from "framer-motion";
 
 const slideUp = {
   initial: {
-    y: "100%",
+    y: "20%",
+    opacity: 0,
   },
 
   open: {
     y: "0%",
-    transition: { duration: 0.9, delay: 0.01 },
+    opacity: 1,
+    transition: { staggerChildren: 0.5, duration: 0.9 },
   },
 
   closed: {
-    y: "100%",
+    y: "20%",
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const slideUpTop = {
+  initial: {
+    y: "20%",
+    opacity: 0,
+  },
+
+  open: {
+    y: "0%",
+    opacity: 1,
+    transition: { staggerChildren: 0.5, duration: 0.9 },
+  },
+
+  closed: {
+    y: "20%",
+    opacity: 0,
     transition: { duration: 0.5 },
   },
 };
 
 const Hero = () => {
-  // useEffect(() => {
-  //   animateSplitText(".split");
-  // }, []);
-
   const description = useRef(null);
   const isInView = useInView(description);
   return (
@@ -40,12 +58,18 @@ const Hero = () => {
           animate={isInView ? "open" : "closed"}
           className="grid gap-2 justify-center items-center  md:text-start w-full md:w-[44rem] py-1 overflow-hidden"
         >
-          <h4 className="split font-oval font-semibold text-xl md:text-[22px] ">
+          <motion.h4
+            variants={slideUpTop}
+            className="split font-oval font-semibold text-xl md:text-[22px] "
+          >
             {`Hey 👋 nice to meet you. I'm Jabel Ahmed, Creative designer and`}
-          </h4>
-          <h1 className="font-sans font-bold text-3xl md:text-4xl md:w-[34rem]">
+          </motion.h4>
+          <motion.h1
+            variants={slideUp}
+            className="font-sans font-bold text-3xl md:text-4xl md:w-[34rem]"
+          >
             helping founder, startup-company to change the digital experience.
-          </h1>
+          </motion.h1>
         </motion.div>
 
         <motion.div

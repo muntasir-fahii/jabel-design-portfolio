@@ -1,7 +1,7 @@
-import { motion, animate, useMotionValue } from "framer-motion";
+import { motion, animate, useMotionValue, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useMeasure from "react-use-measure";
 
 const top = [
@@ -47,7 +47,7 @@ const bottom = [
 ];
 
 const Explore = () => {
-  const FAST_DURATION = 25;
+  const FAST_DURATION = 10;
   const SLOW_DURATION = 75;
 
   const [durationTop, setDurationTop] = useState(FAST_DURATION);
@@ -66,7 +66,7 @@ const Explore = () => {
   useEffect(() => {
     // Top Images
     let controlsTop;
-    let finalPositionTop = -width / 2 - 8;
+    let finalPositionTop = -width / 6 - 8;
 
     if (mustFinishTop) {
       controlsTop = animate(
@@ -94,7 +94,7 @@ const Explore = () => {
 
     // Bottom Images
     let controlsBottom;
-    let finalPositionBottom = width / 2 + 8;
+    let finalPositionBottom = width / 8 - 8;
 
     if (mustFinishBottom) {
       controlsBottom = animate(
@@ -142,14 +142,26 @@ const Explore = () => {
     reRenderBottom,
   ]);
 
+  const description = useRef(null);
+  const isInView = useInView(description);
+
   return (
     <main>
       <section
         className="sp my-20 h-full w-full
        relative"
       >
-        <div className="border-dark w-full  grid justify-center items-center mx-auto gap-5 md:gap-10">
-          <div className="text-center">
+        <motion.div
+          ref={description}
+          animate={isInView ? "open" : "closed"}
+          className="border-dark w-full  grid justify-center items-center mx-auto gap-5 md:gap-10"
+        >
+          <div
+            data-aos="zoom-in-down"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            className="text-center"
+          >
             <h2 className="font-sans text-3xl font-bold">
               My visual exploration
             </h2>
@@ -209,15 +221,19 @@ const Explore = () => {
             ))}
           </motion.div>
 
-          <div className="exploration mx-auto my-5 md:my-0">
+          <motion.div
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            className="exploration mx-auto my-5 md:my-0"
+          >
             <Link
               className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
               href={"./"}
             >
               view more
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[40rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
       </section>
     </main>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -81,18 +82,20 @@ const Projects = () => {
                 </p>
               </div>
               <div className="flex text-center items-center flex-col md:flex-row md:gap-5  lg:gap-10">
-                <Link
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05 }}
                   className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-gray hover:text-dark eq"
-                  href={"./"}
                 >
-                  live website
-                </Link>
-                <Link
+                  <Link href={"./"}>live website</Link>
+                </motion.div>
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.05 }}
                   className="font-oval font-semibold bg-gray py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
-                  href={"./"}
                 >
-                  case study
-                </Link>
+                  <Link href={"./"}>case study</Link>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -101,5 +104,5 @@ const Projects = () => {
     </section>
   );
 };
-
+//
 export default Projects;
