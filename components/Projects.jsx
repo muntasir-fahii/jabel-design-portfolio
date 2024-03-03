@@ -9,6 +9,7 @@ const projects = [
       "https://res.cloudinary.com/dcgreqowu/image/upload/v1708609364/jabel-design/design-1_rm23wj.jpg",
     description:
       "You are training future healthcare professionals whose careers will impact the health of our communities. MedHub has the experience and the tools help you manage program administration so you can focus on educating.",
+    link: "https://www.behance.net/gallery/136756759/Medhub-Healthcare-Education-Management",
   },
   {
     title: "Fusen Pack - custom packaging",
@@ -16,6 +17,7 @@ const projects = [
       "https://res.cloudinary.com/dcgreqowu/image/upload/v1708609365/jabel-design/design-2_iaffps.jpg",
     description:
       "Fusen Pack sells custom packaging to restaurants. We are building an e-commerce website that allows customers to design their own packaging by modifying design templates and placing orders.",
+    link: "https://www.atitesting.com/teas",
   },
   {
     title: "Intex - ecommerce website",
@@ -23,6 +25,7 @@ const projects = [
       "https://res.cloudinary.com/dcgreqowu/image/upload/v1708609363/jabel-design/design-3_oof0xa.jpg",
     description:
       "Anything business embarrassing hidden in the middle of text. Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a book.",
+    link: "https://www.intexitalia.com/",
   },
   {
     title: "Campus - meetup app",
@@ -30,6 +33,7 @@ const projects = [
       "https://res.cloudinary.com/dcgreqowu/image/upload/v1708609368/jabel-design/design-4_epa2fh.jpg",
     description:
       "The campus connects students through shared experiences. Our mobile application allows university students to host and attend meetups in their local vicinity.",
+    link: "https://www.behance.net/gallery/117258671/Campus-Meetup-App",
   },
 ];
 
@@ -77,7 +81,7 @@ const Projects = () => {
                 <h2 className="font-sans font-bold text-xl md:text-[22px] ">
                   {project.title}
                 </h2>
-                <p className="lg:w-[70%] h-44 sm:h-28 md:h-[4.5rem] lg:h-24 text-alt font-normal">
+                <p className="lg:w-[70%] h-44 sm:h-28 md:h-[4.5rem] lg:h-40 text-alt font-normal">
                   {project.description}
                 </p>
               </div>
@@ -87,14 +91,18 @@ const Projects = () => {
                   whileHover={{ scale: 1.05 }}
                   className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-gray hover:text-dark eq"
                 >
-                  <Link href={"./"}>live website</Link>
+                  <Link href={project.link} target="_blank">
+                    live website
+                  </Link>
                 </motion.div>
                 <motion.div
                   whileTap={{ scale: 0.9 }}
                   whileHover={{ scale: 1.05 }}
                   className="font-oval font-semibold bg-gray py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
                 >
-                  <Link href={"./"}>case study</Link>
+                  <Link href={"./"} target="_blank">
+                    case study
+                  </Link>
                 </motion.div>
               </div>
             </div>

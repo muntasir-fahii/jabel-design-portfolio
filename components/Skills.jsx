@@ -80,16 +80,16 @@ const Skills = () => {
           animate={isInView ? "visible" : "hidden"}
           className="skill grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-20 justify-between "
         >
-          {skills.map((skill) => (
-            <motion.div key={skill.name} variants={item}>
-              <p className="bg-gray py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold">
+          {skills.map((skill, index) => (
+            <motion.div key={index} variants={item}>
+              <p className="bg-light py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold">
                 {skill.name}
               </p>
             </motion.div>
           ))}
         </motion.div>
       </div>
-      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem]  rounded-full"></div>
+      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[38rem]  rounded-full"></div>
     </section>
   );
 };

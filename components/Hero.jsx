@@ -89,7 +89,9 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-gray hover:text-dark eq"
           >
-            <Link href={"./"}>{`let's talk on telegram`}</Link>
+            <Link
+              href={"https://web.telegram.org/a/#5679486453"}
+            >{`let's talk on telegram`}</Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}

@@ -148,7 +148,7 @@ const Explore = () => {
   return (
     <section
       className="sp my-20 h-full w-full
-       relative overflow-hidden"
+       relative"
     >
       <motion.div
         ref={description}
@@ -178,7 +178,7 @@ const Explore = () => {
         >
           {[...top, ...top].map((image, index) => (
             <div
-              className="w-40 xl:w-80 2xl:w-[28rem] xl:h-60 2xl:h-[22rem] rounded-xl sm:rounded-2xl   overflow-hidden"
+              className="xl:w-80 2xl:w-[28rem] xl:h-60 2xl:h-[22rem] rounded-xl sm:rounded-2xl   overflow-hidden"
               key={index}
             >
               <Image
@@ -205,7 +205,7 @@ const Explore = () => {
         >
           {[...bottom, ...bottom].map((image, index) => (
             <div
-              className="w-32 xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
+              className=" xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
               key={index}
             >
               <Image
@@ -233,7 +233,7 @@ const Explore = () => {
           </Link>
         </motion.div>
       </motion.div>
-      <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-[40rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
+      <div className="circle-2 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-44 lg:top-72 xl:top-[30rem] 2xl:top-[40rem] left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[44rem] rounded-full"></div>
     </section>
   );
 };
