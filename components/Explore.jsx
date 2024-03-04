@@ -227,7 +227,7 @@ const Explore = () => {
         >
           <Link
             className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
-            href={""}
+            href={"https://dribbble.com/jabelahmed"}
           >
             view more
           </Link>
