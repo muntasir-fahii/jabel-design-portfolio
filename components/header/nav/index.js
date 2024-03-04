@@ -10,15 +10,15 @@ import Footer from "./Footer";
 const navItems = [
   {
     title: "dribble",
-    href: "/",
+    href: "https://dribbble.com/jabelahmed",
   },
   {
     title: "behance",
-    href: "/",
+    href: "https://www.behance.net/jabelahmed",
   },
   {
     title: "linkedin",
-    href: "/",
+    href: "https://www.linkedin.com/in/jabel-ahmed-1810b3152",
   },
 ];
 

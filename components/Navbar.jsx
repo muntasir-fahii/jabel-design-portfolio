@@ -28,15 +28,8 @@ const Navbar = () => {
     <>
       <motion.header
         ref={nav}
-        // initial={{ opacity: 0, y: "-100%" }}
-        // animate={{ c }}
-        // exit={{ opacity: 0, x: "100%" }}
-        // transition={{ ease: "easeOut", duration: 2 }}
         variants={navbar}
         animate={isInView ? "visible" : "hidden"}
-        // data-aos="fade-down"
-        // data-aos-easing="linear"
-        // data-aos-duration="1000"
         className="hidden md:block"
       >
         <nav className="wrapper h-24 flex justify-between items-center mx-auto">

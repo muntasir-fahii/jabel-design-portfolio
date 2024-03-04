@@ -166,7 +166,7 @@ const Explore = () => {
           </h2>
         </div>
         <motion.div
-          className="flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+          className="flex whitespace-nowrap shrink-0 justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
           ref={ref}
           style={{ x: xTranslationTop }}
           onHoverStart={() => {
@@ -193,7 +193,7 @@ const Explore = () => {
           ))}
         </motion.div>
         <motion.div
-          className="exploration flex justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
+          className="exploration flex whitespace-wrap shrink-0 justify-center gap-3 xl:gap-5 items-center mx-auto overflow-hidden"
           ref={ref}
           style={{ x: xTranslationBottom }}
           onHoverStart={() => {
@@ -205,7 +205,7 @@ const Explore = () => {
         >
           {[...bottom, ...bottom].map((image, index) => (
             <div
-              className=" xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
+              className="xl:w-64 2xl:w-96 xl:h-52 2xl:h-80 rounded-xl sm:rounded-2xl overflow-hidden "
               key={index}
             >
               <Image
@@ -227,7 +227,7 @@ const Explore = () => {
         >
           <Link
             className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-8 rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
-            href={"./"}
+            href={""}
           >
             view more
           </Link>
