@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Explore from "@/components/Explore";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Skills from "@/components/Skills";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +34,7 @@ const Home = () => {
         </AnimatePresence>
 
         <Stripe />
+        <Skills />
         <Projects />
         <Explore />
 

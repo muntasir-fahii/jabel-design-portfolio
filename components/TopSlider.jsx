@@ -59,7 +59,7 @@ const TopSlider = () => {
   return (
     <div className="swiper sample-slider  mx-auto">
       <div className="swiper-wrapper">
-        {top.map((image, index) => (
+        {[...top, ...top].map((image, index) => (
           <div
             key={index}
             className="swiper-slide rounded-xl slide-top sm:rounded-2xl overflow-hidden"

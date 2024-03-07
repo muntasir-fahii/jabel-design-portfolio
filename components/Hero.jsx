@@ -61,7 +61,7 @@ const Hero = () => {
             className="split font-oval font-semibold text-xl md:text-2xl "
           >
             Hey <span className="wave">👋</span> nice to meet you.
-            {`I'm Jabel Ahmed`}, Creative designer and
+            {` I'm Jabel Ahmed`}, Creative designer and
           </motion.h4>
           <motion.h1
             variants={slideUp}
@@ -85,7 +85,7 @@ const Hero = () => {
           <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
             <Link
               href={"https://web.telegram.org/a/#5679486453"}
-              className="font-oval font-medium shadow-lg bg-dark text-white py-5
+              className="font-oval font-semibold shadow-lg bg-dark text-white py-5
                px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light hover:shadow-xl eq"
             >{`let's talk on telegram`}</Link>
           </motion.div>
@@ -100,8 +100,8 @@ const Hero = () => {
           >
             <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
               <Link
-                href={"./"}
-                className=" font-oval font-semibold shadow-md bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                href={"https://calendly.com/jabeldesign/30min"}
+                className=" font-oval font-semibold  bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
               >
                 meeting
               </Link>
@@ -119,14 +119,14 @@ const Hero = () => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="bg-gray grid justify-center items-center h-60 w-60 md:w-[19rem] md:h-[19rem] rounded-full mx-auto"
+          className="bg-gray grid justify-center items-center h-60 w-60 md:w-[18rem] md:h-[18rem] rounded-full mx-auto"
         >
           <Image
             src={HeroImage}
             alt="hero"
             width={500}
             height={500}
-            className="hero-img rounded-full h-48 w-48 md:h-[16rem] md:w-[16rem] mx-auto overflow-hidden"
+            className="hero-img rounded-full h-48 w-48 md:h-[15rem] md:w-[15rem] mx-auto overflow-hidden"
           />
         </motion.div>
       </div>

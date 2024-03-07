@@ -97,7 +97,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <Link
-                  className="font-oval bg-gray py-5 px-10 shadow-md rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                  className="font-oval bg-gray py-5 px-10 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
                   href={CV_LINK}
                   target="_blank"
                   download={CV_LINK}

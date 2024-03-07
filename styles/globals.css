@@ -87,16 +87,20 @@ main {
   z-index: 1;
 }
 
+.stripe {
+  z-index: 2;
+}
+
 /* SKILLS */
 
 .skill {
-  z-index: 2;
+  z-index: 3;
 }
 
 /* PROJECTS */
 
 .projects {
-  z-index: 2;
+  z-index: 3;
 }
 
 .project-text {

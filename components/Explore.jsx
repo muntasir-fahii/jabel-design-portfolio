@@ -81,7 +81,7 @@ const Explore = () => {
 
         <div className="swiper bottom-slider  flex justify-center gap-3 xl:gap-5 items-center mx-auto">
           <div className="swiper-wrapper">
-            {bottom.map((image, index) => (
+            {[...bottom, ...bottom].map((image, index) => (
               <div
                 key={index}
                 className="swiper-slide rounded-xl slide-bottom  sm:rounded-2xl overflow-hidden exploration"
@@ -123,7 +123,7 @@ const Explore = () => {
           </Link>
         </motion.div>
       </div>
-      <div className="circle-2 z-1 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-44 lg:top-72 xl:top-[30rem] 2xl:top-[52rem] left-1/2 transform -translate-x-1/2 rounded-full"></div>
+      <div className="circle-2 z-1 h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem] mx-auto absolute top-44 lg:top-72 xl:top-[30rem] 2xl:top-[60rem] left-1/2 transform -translate-x-1/2 rounded-full"></div>
     </section>
   );
 };

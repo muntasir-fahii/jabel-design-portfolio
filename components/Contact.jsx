@@ -87,7 +87,7 @@ const Contact = () => {
   const isInViewSocials = useInView(items);
   return (
     <section className="wrapper sp h-full  w-full relative">
-      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-20 lg:h-[27.5rem]">
+      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-50 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-20 lg:h-[27.5rem]">
         <motion.div
           ref={description}
           variants={slideUp}
@@ -114,7 +114,7 @@ const Contact = () => {
           ref={items}
           variants={container}
           animate={isInViewSocials ? "visible" : "hidden"}
-          className="social-link justify-center items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="social-link justify-center w-1/2 sm:w-full items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
         >
           <motion.div
             variants={item}

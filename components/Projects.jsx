@@ -45,14 +45,14 @@ const projects = [
 const Projects = () => {
   return (
     <section className="h-full my-20 sp relative">
-      <div className="hidden lg:block absolute -top-20 left-1/2 transform -translate-x-1/2">
+      <div className="hidden stripe lg:block absolute -top-20 left-1/2 transform -translate-x-1/2">
         <div className=" h-[2485px] w-96 flex justify-between">
-          <span className="border border-gray h-full"></span>
-          <span className="border border-gray h-full"></span>
-          <span className="border border-gray h-full"></span>
-          <span className="border border-gray h-full"></span>
-          <span className="border border-gray h-full"></span>
-          <span className="border border-gray h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
+          <span className="border border-gray border-opacity-60 h-full"></span>
         </div>
       </div>
       <div className="wrapper grid gap-10 ">
@@ -97,7 +97,7 @@ const Projects = () => {
                 <h2 className="font-sans font-bold text-xl md:text-3xl ">
                   {project.title}
                 </h2>
-                <p className=" project-text h-full lg:text-lg text-alt font-normal line-clamp-4 w-11/12">
+                <p className=" project-text font-oval h-full lg:text-lg text-alt font-normal line-clamp-4 w-11/12">
                   {project.description}
                 </p>
               </div>
@@ -110,9 +110,9 @@ const Projects = () => {
                     <Link
                       href={project.caseStudy}
                       target="_blank"
-                      className="font-oval font-semibold shadow-md bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
+                      className="font-oval font-semibold  bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
                     >
-                      Full Case Study
+                      full case study
                     </Link>
                   </motion.div>
                 ) : index >= 1 && index <= 2 ? (
@@ -127,7 +127,7 @@ const Projects = () => {
                       className="font-oval font-medium shadow-lg bg-dark text-white py-5
                      px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light eq"
                     >
-                      Live Website
+                      live website
                     </Link>
                   </motion.div>
                 ) : (
@@ -146,7 +146,7 @@ const Projects = () => {
                           index === 0 ? "light" : "dark"
                         } hover:shadow-xl eq`}
                       >
-                        Live Website
+                        live website
                       </Link>
                     </motion.div>
                     <motion.div
@@ -156,9 +156,9 @@ const Projects = () => {
                       <Link
                         href={project.caseStudy}
                         target="_blank"
-                        className="font-oval font-semibold shadow-md bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                        className="font-oval font-semibold  bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
                       >
-                        Case Study
+                        case study
                       </Link>
                     </motion.div>
                   </>
