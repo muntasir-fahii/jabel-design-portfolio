@@ -64,32 +64,32 @@ const Skills = () => {
   const items = useRef(null);
   const isInView = useInView(items);
   return (
-    <section className="sp wrapper h-full lg:h-[100vh] xl:[70vh] w-full relative">
-      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-8 ">
+    <section className=" wrapper h-full w-full relative">
+      <div className="wrapper grid justify-center items-center py-10 lg:h-[27.5rem]  bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-2 lg:gap-0">
         <div
           data-aos="zoom-out"
-          // data-aos-easing="linear"
+          data-aos-easing="linear"
           data-aos-duration="500"
           className="skill text-center"
         >
-          <h2 className=" font-sans text-3xl font-bold">{`I'm an expert in these`}</h2>
+          <h2 className=" font-sans text-3xl lg:text-4xl font-bold">{`I'm an expert in these`}</h2>
         </div>
         <motion.div
           variants={container}
           ref={items}
           animate={isInView ? "visible" : "hidden"}
-          className="skill grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-20 justify-between "
+          className="skill grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-32 justify-between "
         >
           {skills.map((skill, index) => (
             <motion.div key={index} variants={item}>
-              <p className="bg-light py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold">
+              <p className="bg-light py-[0.875rem] px-1 sm:px-8 rounded-[6.25rem] text-center font-oval font-semibold text-base lg:text-lg">
                 {skill.name}
               </p>
             </motion.div>
           ))}
         </motion.div>
       </div>
-      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-12 sm:left-44 md:left-48 lg:left-60 xl:left-[25rem] 2xl:left-[38rem]  rounded-full"></div>
+      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-1/2 transform -translate-x-1/2  rounded-full"></div>
     </section>
   );
 };

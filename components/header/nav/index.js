@@ -23,8 +23,8 @@ const navItems = [
 ];
 
 export default function Index() {
-  // const pathname = usePathname();
-  // const [selectedIndicator, setSelectedIndicator] = useState(pathname);
+  const pathname = usePathname();
+  const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
   return (
     <motion.div

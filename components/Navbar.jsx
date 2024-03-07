@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Header from "./header";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import copy from "clipboard-copy";
 
 const CV_LINK =
   "https://drive.google.com/uc?export=download&id=1h5fnAxSzprA4qnqjEjwjlHFqHZZGYxPG";
@@ -21,6 +24,29 @@ const navbar = {
 };
 
 const Navbar = () => {
+  const initialText = "mail me";
+  const copiedText = "heyjabel@gmail.com";
+
+  const [buttonText, setButtonText] = useState(initialText);
+
+  useEffect(() => {
+    if (buttonText === "copied!") {
+      const resetTimeout = setTimeout(() => {
+        setButtonText(initialText);
+      }, 1000);
+
+      return () => clearTimeout(resetTimeout);
+    }
+  }, [buttonText, initialText]);
+
+  const handleButtonClick = async () => {
+    try {
+      await copy(copiedText);
+      setButtonText("copied!");
+    } catch (error) {
+      console.error("Unable to copy to clipboard", error);
+    }
+  };
   const nav = useRef(null);
   const isInView = useInView(nav);
 
@@ -30,19 +56,19 @@ const Navbar = () => {
         ref={nav}
         variants={navbar}
         animate={isInView ? "visible" : "hidden"}
-        className="hidden md:block"
+        className="hidden lg:block"
       >
         <nav className="wrapper h-24 flex justify-between items-center mx-auto">
           <motion.div
             variants={navbar}
             className="flex justify-between items-center gap-10"
           >
-            <Link className="font-oval font-semibold" href={"./"}>
+            <Link className="font-oval font-semibold text-lg" href={"./"}>
               jabel.design
             </Link>
-            <ul className="flex font-sans justify-between gap-10 bg-gray py-[0.875rem] px-6 items-center rounded-[6.25rem]">
+            <ul className="flex font-oval justify-between gap-10 bg-gray py-5 px-6 items-center rounded-[6.25rem]">
               <li className="nav-link eq">
-                <Link href={"https://dribbble.com/jabelahmed"}>dribble</Link>
+                <Link href={"https://dribbble.com/jabelahmed"}>dribbble</Link>
               </li>
               <li className="nav-link eq">
                 <Link href={"https://www.behance.net/jabelahmed"}>behance</Link>
@@ -69,9 +95,13 @@ const Navbar = () => {
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 whileHover={{ scale: 1.05 }}
-                className=" font-oval bg-gray py-5 px-10 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
               >
-                <Link href={CV_LINK} target="_blank" download={CV_LINK}>
+                <Link
+                  className="font-oval bg-gray py-5 px-10 shadow-md rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                  href={CV_LINK}
+                  target="_blank"
+                  download={CV_LINK}
+                >
                   cv
                 </Link>
               </motion.div>
@@ -85,16 +115,21 @@ const Navbar = () => {
               <motion.div
                 whileTap={{ scale: 0.9 }}
                 whileHover={{ scale: 1.05 }}
-                className="font-oval font-medium shadow-md bg-dark text-white py-[0.875rem] px-12  rounded-[6.25rem] hover:bg-gray hover:text-dark eq"
               >
-                <Link href={""}>mail me</Link>
+                <Link
+                  href={""}
+                  onClick={handleButtonClick}
+                  className="font-oval font-medium shadow-lg bg-dark text-white py-5 px-12  rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-xl eq"
+                >
+                  {buttonText}
+                </Link>
               </motion.div>
             </div>
           </motion.div>
         </nav>
       </motion.header>
 
-      <div className="md:hidden absolute w-screen h-screen  z-[900]  top-0 left-0 right-0 bottom-0 flex justify-center ">
+      <div className="lg:hidden absolute w-screen h-screen  z-[900]  top-0 left-0 right-0 bottom-0 flex justify-center ">
         <Header />
       </div>
     </>

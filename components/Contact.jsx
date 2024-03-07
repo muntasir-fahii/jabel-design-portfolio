@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import copy from "clipboard-copy";
 
 const slideUp = {
   initial: {
@@ -54,6 +57,29 @@ const item = {
 };
 
 const Contact = () => {
+  const initialText = "heyjabel@gmail.com";
+  const copiedText = "copied!";
+  const [displayText, setDisplayText] = useState(initialText);
+
+  useEffect(() => {
+    if (displayText === copiedText) {
+      const resetTimeout = setTimeout(() => {
+        setDisplayText(initialText);
+      }, 1500);
+
+      return () => clearTimeout(resetTimeout);
+    }
+  }, [displayText, initialText]);
+
+  const handleTextClick = async () => {
+    try {
+      await copy(initialText);
+      setDisplayText(copiedText);
+    } catch (error) {
+      console.error("Unable to copy to clipboard", error);
+    }
+  };
+
   const description = useRef(null);
   const isInView = useInView(description);
 
@@ -61,7 +87,7 @@ const Contact = () => {
   const isInViewSocials = useInView(items);
   return (
     <section className="wrapper sp h-full  w-full relative">
-      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-20 ">
+      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-80 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-20 lg:h-[27.5rem]">
         <motion.div
           ref={description}
           variants={slideUp}
@@ -75,9 +101,12 @@ const Contact = () => {
             >{`Let's work together`}</motion.h2>
           </div>
           <motion.div variants={slideUp} className="text-center">
-            <h1 className="font-sans text-3xl sm:text-5xl font-bold">
-              heyjabel@gmail.com
-            </h1>
+            <div
+              onClick={handleTextClick}
+              className="font-sans text-3xl sm:text-5xl font-bold cursor-pointer"
+            >
+              {displayText}
+            </div>
           </motion.div>
         </motion.div>
 
@@ -85,33 +114,43 @@ const Contact = () => {
           ref={items}
           variants={container}
           animate={isInViewSocials ? "visible" : "hidden"}
-          className="social-link grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="social-link justify-center items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
         >
           <motion.div
             variants={item}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
-            <Link href={"https://dribbble.com/jabelahmed"}>dribbble</Link>
+            <Link
+              href={"https://dribbble.com/jabelahmed"}
+              className="bg-light  py-5 px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-dark hover:text-light hover:shadow-xl eq"
+            >
+              dribbble
+            </Link>
           </motion.div>
 
           <motion.div
             variants={item}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
-            <Link href={"https://www.behance.net/jabelahmed"}>behance</Link>
+            <Link
+              href={"https://www.behance.net/jabelahmed"}
+              className="bg-light  py-5 px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-dark hover:text-light hover:shadow-xl eq"
+            >
+              behance
+            </Link>
           </motion.div>
 
           <motion.div
             variants={item}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-primary hover:text-light eq"
           >
-            <Link href={"https://www.linkedin.com/in/jabel-ahmed-1810b3152"}>
+            <Link
+              href={"https://www.linkedin.com/in/jabel-ahmed-1810b3152"}
+              className="bg-light  py-5 px-8 rounded-[6.25rem] text-center font-oval font-semibold hover:bg-dark hover:text-light hover:shadow-xl eq"
+            >
               linkedin
             </Link>
           </motion.div>
@@ -120,9 +159,11 @@ const Contact = () => {
             variants={item}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-light  py-[0.875rem] px-8 rounded-[6.25rem] text-center font-oval font-semibold  hover:bg-primary hover:text-light eq"
           >
-            <Link href={"https://www.instagram.com/jabelahmed5050"}>
+            <Link
+              href={"https://www.instagram.com/jabelahmed5050"}
+              className="bg-light  py-5 px-8 rounded-[6.25rem] text-center font-oval font-semibold  hover:bg-dark hover:text-light hover:shadow-xl eq"
+            >
               instagram
             </Link>
           </motion.div>
