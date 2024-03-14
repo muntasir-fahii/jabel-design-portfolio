@@ -87,12 +87,12 @@ const Contact = () => {
   const isInViewSocials = useInView(items);
   return (
     <section className="wrapper sp h-full  w-full relative">
-      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-50 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-20 lg:h-[27.5rem]">
+      <div className="wrapper  grid justify-center items-center py-10 lg:py-20 bg-gray bg-opacity-50 rounded-br-[6rem] rounded-bl-[6rem] md:rounded-br-[9.375rem] md:rounded-bl-[9.375rem] gap-10 lg:h-[27.5rem]">
         <motion.div
           ref={description}
           variants={slideUp}
           animate={isInView ? "open" : "closed"}
-          className="grid gap-5"
+          className="grid gap-2"
         >
           <div className="text-center">
             <motion.h2

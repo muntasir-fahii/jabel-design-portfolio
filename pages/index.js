@@ -37,7 +37,6 @@ const Home = () => {
         <Skills />
         <Projects />
         <Explore />
-
         <Contact />
         <Footer />
       </div>

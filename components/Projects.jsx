@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -74,7 +74,7 @@ const Projects = () => {
             data-aos-duration="900"
             data-aos-delay="250"
             className={`projects bg-gray h-full
-             bg-opacity-80 grid grid-cols-1 lg:grid-cols-2 p-5 lg:p-8 rounded-3xl ${
+             bg-opacity-80 grid grid-cols-1 lg:grid-cols-2 p-2 lg:p-8 rounded-3xl ${
                index === projects.length - 1 ? "last-child" : ""
              }`}
             key={index}
@@ -86,18 +86,17 @@ const Projects = () => {
                 width={720}
                 height={720}
                 priority
-                className="w-full h-full object-cover"
               />
             </div>
             <div
-              className="col-span-1 flex flex-col items-center md:items-start justify-evenly  gap-10 rounded-3xl overflow-hidden h-[33rem]
-         lg:h-full bg-light px-10"
+              className="col-span-1 flex flex-col items-center md:items-start justify-evenly gap-1 md:gap-10 rounded-3xl overflow-hidden h-[33rem]
+         lg:h-full bg-light px-1 md:px-10"
             >
               <div className="grid  text-center md:text-start gap-5">
                 <h2 className="font-sans font-bold text-xl md:text-3xl ">
                   {project.title}
                 </h2>
-                <p className=" project-text font-oval h-full lg:text-lg text-alt font-normal line-clamp-4 w-11/12">
+                <p className=" project-text font-oval h-full lg:text-lg text-alt line-clamp-6  lg:line-clamp-4 w-4/5 text-center md:text-start  mx-auto md:mx-0 md:w-11/12 ">
                   {project.description}
                 </p>
               </div>

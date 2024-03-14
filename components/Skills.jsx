@@ -65,7 +65,7 @@ const Skills = () => {
   const isInView = useInView(items);
   return (
     <section className=" wrapper h-full w-full relative">
-      <div className="wrapper grid justify-center items-center py-10 lg:h-[27.5rem]  bg-gray bg-opacity-50 rounded-br-[9.375rem] rounded-bl-[9.375rem] gap-2 lg:gap-0">
+      <div className="wrapper grid justify-center items-center py-10 lg:h-[27.5rem]  bg-gray bg-opacity-50 rounded-br-[6rem] rounded-bl-[6rem] md:rounded-br-[9.375rem] md:rounded-bl-[9.375rem] gap-5 lg:gap-0">
         <div
           data-aos="zoom-out"
           data-aos-easing="linear"
@@ -78,7 +78,7 @@ const Skills = () => {
           variants={container}
           ref={items}
           animate={isInView ? "visible" : "hidden"}
-          className="skill grid grid-cols-1 w-1/2 sm:w-full  mx-auto sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-32 justify-between "
+          className="skill grid sm:w-full  mx-auto grid-cols-2 md:grid-cols-3 gap-x-5 lg:gap-x-32 justify-between "
         >
           {skills.map((skill, index) => (
             <motion.div key={index} variants={item}>
@@ -89,7 +89,7 @@ const Skills = () => {
           ))}
         </motion.div>
       </div>
-      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-2 lg:-top-10   left-1/2 transform -translate-x-1/2  rounded-full"></div>
+      <div className="circle-2 absolute  h-72 w-72 md:h-96 md:w-96 lg:h-[30rem] lg:w-[30rem]  -top-20 lg:-top-10   left-1/2 transform -translate-x-1/2  rounded-full"></div>
     </section>
   );
 };

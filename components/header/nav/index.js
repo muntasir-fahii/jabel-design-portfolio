@@ -6,6 +6,7 @@ import { menuSlide } from "../anime";
 import Link from "./Link";
 import Curve from "./Curve";
 import Footer from "./Footer";
+import Image from "next/image";
 
 const navItems = [
   {
@@ -42,7 +43,15 @@ export default function Index() {
           className={styles.nav}
         >
           <div className={styles.header}>
-            <p className="font-oval text-base font-semibold">jabel.design</p>
+            <Image
+              src="/favicon.png"
+              alt="logo"
+              height={50}
+              width={50}
+              priority
+              className="object-cover
+              "
+            />
           </div>
           {navItems.map((data, index) => {
             return (

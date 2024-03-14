@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import HeroImage from "../public/hero.jpg";
 import { useRef } from "react";
@@ -48,8 +48,8 @@ const Hero = () => {
   const description = useRef(null);
   const isInView = useInView(description);
   return (
-    <main className="wrapper  p-5 w-full mb-36 gap-5  flex flex-col lg:flex-row justify-between  items-center mt-0 lg:mt-72 relative">
-      <div className="grid justify-center items-center lg:items-start col-span-1 py-5 gap-10 lg:gap-16 ">
+    <main className="wrapper  p-5 w-full mb-36 gap-40  flex flex-col lg:flex-row justify-between  items-center mt-0 lg:mt-72 relative">
+      <div className="grid justify-center items-center lg:items-start col-span-1 py-5 gap-10 lg:gap-16  ">
         <motion.div
           ref={description}
           variants={slideUp}
@@ -65,7 +65,7 @@ const Hero = () => {
           </motion.h4>
           <motion.h1
             variants={slideUp}
-            className="font-sans font-bold text-3xl md:text-5xl"
+            className="font-sans hero-text font-bold text-3xl md:text-5xl"
           >
             helping founder, startup-company <br className="hidden md:block" />
             to change the digital experience.
@@ -80,7 +80,7 @@ const Hero = () => {
             delay: 0.7,
             ease: [0.25, 1, 0.5, 1],
           }}
-          className="flex gap-14 flex-col md:flex-row justify-center items-center lg:justify-start  h-full md:gap-5"
+          className="flex gap-14 flex-col md:flex-row justify-center items-center lg:justify-start  h-full md:gap-5 mb-5 md:mb-0"
         >
           <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
             <Link
@@ -109,7 +109,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-
       <div className="col-span-1 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -119,21 +118,25 @@ const Hero = () => {
             delay: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="bg-gray grid justify-center items-center h-60 w-60 md:w-[18rem] md:h-[18rem] rounded-full mx-auto"
+          className="hero-overlay grid justify-center items-center  h-48 w-48 md:h-[15rem] md:w-[15rem] rounded-full mx-auto"
         >
-          <Image
-            src={HeroImage}
-            alt="hero"
-            width={500}
-            height={500}
-            className="hero-img rounded-full h-48 w-48 md:h-[15rem] md:w-[15rem] mx-auto overflow-hidden"
-          />
+          <div className="hero-block">
+            <Image
+              src={HeroImage}
+              alt="hero"
+              width={500}
+              height={500}
+              className="hero-img  rounded-full  mx-auto overflow-hidden"
+            />
+          </div>
         </motion.div>
       </div>
 
-      <div className="circle absolute -top-12 -left-80 rounded-full"></div>
+      <div className="circle absolute -top-60 -left-80 rounded-full"></div>
     </main>
   );
 };
 
 export default Hero;
+
+//h-48 w-48 md:h-[15rem] md:w-[15rem]

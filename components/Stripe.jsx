@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import Skills from "./Skills";
 
 const Stripe = () => {
   return (
@@ -18,7 +17,6 @@ const Stripe = () => {
       </div>
       <Navbar />
       <Hero />
-      {/* <Skills /> */}
     </div>
   );
 };

@@ -5,9 +5,13 @@ import Header from "./header";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import copy from "clipboard-copy";
+import Image from "next/legacy/image";
 
 const CV_LINK =
   "https://drive.google.com/uc?export=download&id=1h5fnAxSzprA4qnqjEjwjlHFqHZZGYxPG";
+
+const LOGO =
+  "https://res.cloudinary.com/dcgreqowu/image/upload/v1709983529/favicon_uvpjcn.png";
 
 const navbar = {
   hidden: { opacity: 0, y: "-100%" },
@@ -63,9 +67,16 @@ const Navbar = () => {
             variants={navbar}
             className="flex justify-between items-center gap-10"
           >
-            <Link className="font-oval font-semibold text-lg" href={"./"}>
-              jabel.design
-            </Link>
+            <Image
+              src="/favicon.png"
+              alt="logo"
+              height={50}
+              width={50}
+              priority
+              className="object-cover
+              "
+            />
+
             <ul className="flex font-oval justify-between gap-10 bg-gray py-5 px-6 items-center rounded-[6.25rem]">
               <li className="nav-link eq">
                 <Link href={"https://dribbble.com/jabelahmed"}>dribbble</Link>

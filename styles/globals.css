@@ -55,9 +55,24 @@ main {
 
 /* HERO */
 
+.hero-overlay {
+  height: 18rem !important;
+  width: 18rem !important;
+  background-color: #f2f2f2 !important;
+}
+
+.hero-block {
+  height: 15rem !important;
+  width: 15rem !important;
+}
+
 .hero-img {
-  border: 1.5rem solid white;
-  object-fit: cover;
+  border: 1.5rem solid white !important;
+  object-fit: cover !important;
+}
+
+.hero-text {
+  line-height: 1.2 !important;
 }
 
 .circle {
@@ -105,6 +120,8 @@ main {
 
 .project-text {
   line-height: 1.8 !important;
+  font-weight: 300 !important;
+  font-size: 16px !important;
 }
 
 /* EXPLORATION */
@@ -131,33 +148,6 @@ main {
 
 .social-link {
   z-index: 2;
-}
-
-.sample-slider {
-  width: 100%;
-}
-
-.bottom-slider {
-  width: 100%;
-}
-.bottom-slider img {
-  width: 100%;
-}
-
-.sample-slider img {
-  width: 100%;
-}
-
-.sample-slider .bottom-slider .swiper-wrapper {
-  transition-timing-function: linear;
-}
-
-.slide-top {
-  width: 650px !important;
-}
-
-.slide-bottom {
-  width: 530px !important;
 }
 
 .wave {
