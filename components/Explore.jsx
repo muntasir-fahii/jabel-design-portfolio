@@ -139,7 +139,7 @@ const Explore = () => {
           className="exploration mx-auto my-10 "
         >
           <Link
-            className="font-oval font-medium shadow-lg bg-dark text-white py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-xl eq"
+            className="font-oval font-medium shadow-lg bg-dark text-white text-xs sm:text-base py-3 px-4 sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-xl eq"
             href={"https://dribbble.com/jabelahmed"}
           >
             view more

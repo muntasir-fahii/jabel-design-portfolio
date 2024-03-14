@@ -79,25 +79,25 @@ const Projects = () => {
              }`}
             key={index}
           >
-            <div className="col-span-1  bg-purple-700 h-64 sm:h-72 md:h-[30rem] rounded-3xl  overflow-hidden">
+            <div className="col-span-1  h-72 sm:h-72 md:h-[28rem] rounded-3xl  overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
-                width={1024}
-                height={1024}
+                width={800}
+                height={800}
                 priority
                 className="h-full w-full object-cover"
               />
             </div>
             <div
-              className="col-span-1 flex flex-col items-center md:items-start justify-evenly gap-1 md:gap-10 rounded-3xl overflow-hidden h-[33rem]
+              className="col-span-1 flex flex-col items-center md:items-start justify-evenly gap-1 md:gap-10 rounded-3xl overflow-hidden h-[30rem]
          lg:h-full bg-light px-1 md:px-10"
             >
               <div className="grid  text-center md:text-start gap-5">
                 <h2 className="font-sans font-bold text-xl md:text-3xl ">
                   {project.title}
                 </h2>
-                <p className=" project-text font-oval h-full lg:text-lg text-alt line-clamp-6  lg:line-clamp-5 w-4/5 text-center md:text-start  mx-auto md:mx-0 md:w-11/12 ">
+                <p className=" project-text font-oval h-full lg:text-lg text-alt line-clamp-6  lg:line-clamp-5  text-center md:text-start  mx-auto md:mx-0 ">
                   {project.description}
                 </p>
               </div>
@@ -110,7 +110,7 @@ const Projects = () => {
                     <Link
                       href={project.caseStudy}
                       target="_blank"
-                      className="font-oval font-semibold  bg-gray py-3 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
+                      className="font-oval font-semibold  bg-gray py-3 px-4 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
                     >
                       full case study
                     </Link>
@@ -124,7 +124,7 @@ const Projects = () => {
                     <Link
                       href={project.link}
                       target="_blank"
-                      className="font-oval font-medium shadow-lg bg-dark text-white py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light eq"
+                      className="font-oval font-medium shadow-lg bg-dark text-white py-3 px-4 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light eq"
                     >
                       live website
                     </Link>
@@ -139,7 +139,7 @@ const Projects = () => {
                       <Link
                         href={project.link}
                         target="_blank"
-                        className={`font-oval font-medium shadow-lg bg-dark text-white py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-${
+                        className={`font-oval font-medium shadow-lg bg-dark text-white py-3 px-4 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-${
                           index === 0 ? "dark" : "gray"
                         } hover:text-${
                           index === 0 ? "light" : "dark"
@@ -155,7 +155,7 @@ const Projects = () => {
                       <Link
                         href={project.caseStudy}
                         target="_blank"
-                        className="font-oval font-semibold  bg-gray py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                        className="font-oval font-semibold  bg-gray py-3 px-4 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
                       >
                         case study
                       </Link>

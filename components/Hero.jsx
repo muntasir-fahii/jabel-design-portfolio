@@ -85,7 +85,7 @@ const Hero = () => {
           <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
             <Link
               href={"https://web.telegram.org/a/#5679486453"}
-              className="font-oval font-semibold shadow-lg bg-dark text-white py-2 px-2 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light hover:shadow-xl eq"
+              className="font-oval font-semibold shadow-lg bg-dark text-white py-3 px-4 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light hover:shadow-xl eq"
             >{`let's talk on telegram`}</Link>
           </motion.div>
           <motion.div
@@ -100,7 +100,7 @@ const Hero = () => {
             <motion.div whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.05 }}>
               <Link
                 href={"https://calendly.com/jabeldesign/30min"}
-                className=" font-oval font-semibold  bg-gray py-3 px-5 w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                className=" font-oval font-semibold  bg-gray py-3  w-full text-xs sm:text-base  sm:py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
               >
                 meeting
               </Link>
