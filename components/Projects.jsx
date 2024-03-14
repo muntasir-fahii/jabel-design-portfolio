@@ -79,13 +79,14 @@ const Projects = () => {
              }`}
             key={index}
           >
-            <div className="col-span-1 w-full h-64 sm:h-72 md:h-[30rem] rounded-3xl  overflow-hidden">
+            <div className="col-span-1  bg-purple-700 h-64 sm:h-72 md:h-[30rem] rounded-3xl  overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
-                width={720}
-                height={720}
+                width={1024}
+                height={1024}
                 priority
+                className="h-full w-full object-cover"
               />
             </div>
             <div
@@ -96,11 +97,11 @@ const Projects = () => {
                 <h2 className="font-sans font-bold text-xl md:text-3xl ">
                   {project.title}
                 </h2>
-                <p className=" project-text font-oval h-full lg:text-lg text-alt line-clamp-6  lg:line-clamp-4 w-4/5 text-center md:text-start  mx-auto md:mx-0 md:w-11/12 ">
+                <p className=" project-text font-oval h-full lg:text-lg text-alt line-clamp-6  lg:line-clamp-5 w-4/5 text-center md:text-start  mx-auto md:mx-0 md:w-11/12 ">
                   {project.description}
                 </p>
               </div>
-              <div className="grid items-center justify-center grid-cols-1 md:grid-cols-2 gap-14 md:gap-5">
+              <div className="grid items-center justify-center grid-cols-1 md:grid-cols-2 gap-5">
                 {index === projects.length - 1 ? (
                   <motion.div
                     whileTap={{ scale: 0.9 }}
@@ -109,7 +110,7 @@ const Projects = () => {
                     <Link
                       href={project.caseStudy}
                       target="_blank"
-                      className="font-oval font-semibold  bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
+                      className="font-oval font-semibold  bg-gray py-3 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light eq"
                     >
                       full case study
                     </Link>
@@ -123,8 +124,7 @@ const Projects = () => {
                     <Link
                       href={project.link}
                       target="_blank"
-                      className="font-oval font-medium shadow-lg bg-dark text-white py-5
-                     px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light eq"
+                      className="font-oval font-medium shadow-lg bg-dark text-white py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-dark hover:text-light eq"
                     >
                       live website
                     </Link>
@@ -139,7 +139,7 @@ const Projects = () => {
                       <Link
                         href={project.link}
                         target="_blank"
-                        className={`font-oval font-medium shadow-lg bg-dark text-white py-5 px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-${
+                        className={`font-oval font-medium shadow-lg bg-dark text-white py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] mb-5 md:mb-0 hover:bg-${
                           index === 0 ? "dark" : "gray"
                         } hover:text-${
                           index === 0 ? "light" : "dark"
@@ -155,7 +155,7 @@ const Projects = () => {
                       <Link
                         href={project.caseStudy}
                         target="_blank"
-                        className="font-oval font-semibold  bg-gray py-5 px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
+                        className="font-oval font-semibold  bg-gray py-2 px-[10px] w-full text-xs sm:text-base  sm:py-5 sm:px-8 rounded-[6.25rem] hover:bg-dark hover:text-light hover:shadow-lg eq"
                       >
                         case study
                       </Link>

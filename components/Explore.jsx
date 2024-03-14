@@ -21,7 +21,13 @@ const Explore = () => {
           </h2>
         </div>
 
-        <Marquee speed={200} pauseOnHover={true} direction="left" loop={400}>
+        <Marquee
+          speed={200}
+          pauseOnHover={true}
+          direction="left"
+          loop={400}
+          className="gap-5"
+        >
           <div className="flex justify-between items-center gap-5">
             <div className="rounded-2xl overflow-hidden">
               <Image
@@ -66,7 +72,13 @@ const Explore = () => {
           </div>
         </Marquee>
 
-        <Marquee speed={200} pauseOnHover={true} direction="right" loop={400}>
+        <Marquee
+          speed={200}
+          pauseOnHover={true}
+          direction="right"
+          loop={400}
+          className="gap-5"
+        >
           <div className="flex justify-between items-center gap-5">
             <div className="rounded-2xl overflow-hidden">
               <Image
